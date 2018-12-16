@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>textContent vs createTextNode</title>
+  <!-- <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css"> -->
+
+  <link rel="stylesheet" href='/codingBlog/_site/css/font-awesome.min.css'>
+  <link rel="stylesheet" href='/codingBlog/_site/css/bootstrap.css'>
+  <link rel="stylesheet" href='/codingBlog/_site/css/style.css'>
+
+
+  <body>
+   
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top py-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="" width="50" height="50" alt="">
+        <h3 class="d-inline align-middle">Encaptcha</h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href='/codingBlog/_site/index.html'>Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8 mx-auto">
+            <!-- Title -->
+      <h1 class="mt-4">textContent vs createTextNode</h1>
+      <!-- Author -->
+      <p class="lead">
+        by
+        <a href="#">Excelligence</a>
+      </p>
+      <hr>
+      <!-- Date/Time -->
+      <p> Posted on Dec 15, 2018</p>
+               <!-- Preview Image -->
+  <img class="img-fluid rounded" src='/codingBlog/_site/img/textcontent%20vs%20create%20text%20node.png'  alt="">
+      <!-- Post Content -->
+      <h5>Introduction</h5>
+      <p class="lead">textContent can be used to change text of an existing element. This will replace existing content with new content. createTextNode can be used to add to existing text content.
+      </p>
+    
+      <p class="lead">
+        HTML
+       <pre class="bg-dark text-warning rounded p-2"><code>
+        &lt;p id='para'&gt;Lorem ipsum dolor sit amet laboriosam dicta fugit? &lt;/p&gt;
+     </code></pre>
+      </p>
+
+      <p class="lead">
+            JavaScript
+       <pre class="bg-dark text-warning rounded p-2"><code>
+        const p =document.getElementById('para');
+     </code></pre>
+      </p>
+
+      <p class="lead">
+            This will append.
+       <pre class="bg-dark text-warning rounded p-2"><code>
+        p.append(document.createTextNode(' This created text node text'))
+     </code></pre>
+      </p>
+
+
+      <p class="lead">
+            This will replace with new text
+       <pre class="bg-dark text-warning rounded p-2"><code>
+        p.textContent='this is the changed text';
+     </code></pre>
+      </p>
+
+
+        </div>
+    </div>
+</div>
+
+      <!-- FOOTER -->
+  <footer id="main-footer" class="py-5 bg-light text-dark">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-6 mx-auto">
+          <p class="lead">
+            Copyright &copy;
+            <span id="year"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <script src='/codingBlog/_site/js/jquery.min.js'></script>
+    <script src='/codingBlog/_site/js/popper.min.js'></script>
+    <script src='/codingBlog/_site/js/bootstrap.min.js'></script>
+ </body>
+
+</html>

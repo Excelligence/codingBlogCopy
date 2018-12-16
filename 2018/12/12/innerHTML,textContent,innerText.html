@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Difference between innerHTML, textContent, innerText</title>
+  <!-- <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css"> -->
+
+  <link rel="stylesheet" href='/codingBlog/_site/css/font-awesome.min.css'>
+  <link rel="stylesheet" href='/codingBlog/_site/css/bootstrap.css'>
+  <link rel="stylesheet" href='/codingBlog/_site/css/style.css'>
+
+
+  <body>
+   
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top py-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="" width="50" height="50" alt="">
+        <h3 class="d-inline align-middle">Encaptcha</h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href='/codingBlog/_site/index.html'>Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8 mx-auto">
+            <!-- Title -->
+      <h1 class="mt-4">Difference between innerHTML, textContent, innerText</h1>
+      <!-- Author -->
+      <p class="lead">
+        by
+        <a href="#"></a>
+      </p>
+      <hr>
+      <!-- Date/Time -->
+      <p> Posted on Dec 12, 2018</p>
+             <h3>innerHTML</h3>
+<ul>
+<li>innerHTML can be text content or HTML Source code</li>
+<li>used to set or return HTML Content of an element</li>
+<li>The innerHTML property returns the text, including all spacing and inner element tags. </li>
+
+</ul>
+<h4>Setting HTML using innerHTML</h4>
+<p>HTML</p>
+<pre class="bg-dark text-warning rounded p-2"><code>&lt;p id=&quot;output&quot;&gt;Lorem ipsum dolor sit amet &lt;strong&gt;consectetur adipisicing elit. Ipsam &lt;/p&gt;
+</code></pre>
+<p>Javascript</p>
+<pre class="bg-dark text-warning rounded p-2"><code>&lt;script&gt;
+const output = document.getElementById(&#39;output&#39;);
+
+ output.innerHTML=&#39;This is the &lt;strong&gt; text &lt;/strong&gt; content to be output&#39;
+
+&lt;/script&gt;
+</code></pre>
+<p>Output</p>
+<p><img src='C:\Users\conta\AppData\Roaming\Typora\typora-user-images\1544884548562.png' alt='1544884548562' referrerPolicy='no-referrer' /></p>
+<h4>What innerHTML returns</h4>
+<p>HTML</p>
+<pre class="bg-dark text-warning rounded p-2"><code>&lt;p id=&quot;para&quot;&gt;Lorem ipsum dolor sit amet &lt;strong&gt;consectetur adipisicing elit. Ipsam laudantium &lt;/strong&gt;architecto nobis corporis consectetur. Ullam totam reprehenderit atque laboriosam beatae cumque, perferendis               earum, dolor exercitationem            inventore dicta, magni velit assumenda.&lt;/p&gt;
+
+&lt;script&gt;
+
+</code></pre>
+<p>Javascript</p>
+<pre class="bg-dark text-warning rounded p-2"><code>const p = document.getElementById(&#39;para&#39;)
+
+const html=p.innerHTML
+
+console.log(html)
+
+</code></pre>
+<p>See that html tags and additonal spaces are preserved</p>
+<pre class="bg-dark text-warning rounded p-2"><code>
+//Output
+
+        //    Lorem ipsum dolor sit amet &lt;strong&gt;consectetur adipisicing elit. Ipsam laudantium &lt;/strong&gt;architecto nobis corporis consectetur. Ullam totam reprehenderit atque laboriosam beatae cumque, perferendis               earum, dolor exercitationem            inventore dicta, magni velit assumenda.
+        //    Full HTML avaialable.
+        
+
+
+&lt;/script&gt;
+
+</code></pre>
+<h3>textContent</h3>
+<ul>
+<li>To add text content only, no styles.</li>
+<li>When setting text it will remove all child elements and replace it with the text.</li>
+<li>Return text of all child elements.</li>
+<li>The textContent property returns the text with spacing, but without inner element tags.</li>
+
+</ul>
+<h4>Setting text content</h4>
+<p>HTML</p>
+<pre class="bg-dark text-warning rounded p-2"><code>&lt;p id=&quot;output&quot;&gt;&lt;/p&gt;
+</code></pre>
+<p>Javascript</p>
+<pre class="bg-dark text-warning rounded p-2"><code>&lt;script&gt;
+    const output = document.getElementById(&#39;output&#39;);
+    output.textContent=&#39;This is the text content to be output&#39;
+&lt;/script&gt;
+</code></pre>
+<p>Output</p>
+<p><img src='C:\Users\conta\AppData\Roaming\Typora\typora-user-images\1544885936443.png' alt='1544885936443' referrerPolicy='no-referrer' /></p>
+<h4>What textContent returns</h4>
+<p>HTML</p>
+<pre class="bg-dark text-warning rounded p-2"><code>
+&lt;p id=&quot;para&quot;&gt;Lorem ipsum dolor sit amet &lt;strong&gt;consectetur adipisicing elit. Ipsam laudantium &lt;/strong&gt;architecto nobis corporis consectetur. Ullam totam reprehenderit atque laboriosam beatae cumque, perferendis               earum, dolor exercitationem            inventore dicta, magni velit assumenda.&lt;/p&gt;
+
+</code></pre>
+<p>Javascript</p>
+<pre class="bg-dark text-warning rounded p-2"><code>
+&lt;script&gt;
+
+
+
+const p = document.getElementById(&#39;para&#39;)
+
+const textContent=p.textContent
+
+console.log(textContent)
+
+</code></pre>
+<p>See that the html tags are taken away , but additional spaces are kept</p>
+<pre class="bg-dark text-warning rounded p-2"><code>// Output in console
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam laudantium architecto nobis corporis consectetur. Ullam totam reprehenderit atque laboriosam beatae cumque, perferendis               earum, dolor exercitationem            inventore dicta, magni velit assumenda.
+</code></pre>
+<h3>innerText</h3>
+<ul>
+<li>the innerText sets or returns the text content of the specified node, and all of its child nodes</li>
+<li>The innerText property returns just the text, without spacing and inner element tags. </li>
+<li>Returns text of all elements except script tag and style tag</li>
+<li>By setting this property, any child nodes are removed and replaced by a single Text node containing the specified string.</li>
+
+</ul>
+<h4>Setting innerText</h4>
+<p>HTML</p>
+<pre class="bg-dark text-warning rounded p-2"><code>&lt;p id=&quot;output&quot;&gt;&lt;/p&gt;
+</code></pre>
+<p>Javascript</p>
+<pre class="bg-dark text-warning rounded p-2"><code>&lt;script&gt;
+    const output = document.getElementById(&#39;output&#39;);
+    output.innerText=&#39;This is the inner text to be output&#39;
+&lt;/script&gt;
+</code></pre>
+<p>Output</p>
+<p>&nbsp;</p>
+<p><img src='C:\Users\conta\AppData\Roaming\Typora\typora-user-images\1544886106866.png' alt='1544886106866' referrerPolicy='no-referrer' /></p>
+<h4>What does innerText return</h4>
+<p>HTML</p>
+<pre class="bg-dark text-warning rounded p-2"><code>&lt;p id=&quot;para&quot;&gt;Lorem ipsum dolor sit amet &lt;strong&gt;consectetur adipisicing elit. Ipsam laudantium &lt;/strong&gt;architecto nobis corporis consectetur. Ullam totam reprehenderit atque laboriosam beatae cumque, perferendis               earum, dolor exercitationem            inventore dicta, magni velit assumenda.&lt;/p&gt;
+</code></pre>
+<p>Javascript</p>
+<pre class="bg-dark text-warning rounded p-2"><code>&lt;script&gt;
+const p = document.getElementById(&#39;para&#39;)
+
+const innerText=p.innerText
+
+console.log(innerText)
+</code></pre>
+<p>Output in console</p>
+<p>See that both html tags and additional spaces are removed.</p>
+<pre class="bg-dark text-warning rounded p-2"><code>
+       //Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam laudantium architecto nobis corporis consectetur. Ullam totam reprehenderit atque laboriosam beatae cumque, perferendis earum, dolor exercitationem inventore dicta, magni velit assumenda.
+</code></pre>
+</script>
+<p>&nbsp;</p>
+</body>
+</html>
+        </div>
+    </div>
+</div>
+
+      <!-- FOOTER -->
+  <footer id="main-footer" class="py-5 bg-light text-dark">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-6 mx-auto">
+          <p class="lead">
+            Copyright &copy;
+            <span id="year"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <script src='/codingBlog/_site/js/jquery.min.js'></script>
+    <script src='/codingBlog/_site/js/popper.min.js'></script>
+    <script src='/codingBlog/_site/js/bootstrap.min.js'></script>
+ </body>
+
+</html>

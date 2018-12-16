@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CURL Reference</title>
+  <!-- <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css"> -->
+
+  <link rel="stylesheet" href='/codingBlog/_site/css/font-awesome.min.css'>
+  <link rel="stylesheet" href='/codingBlog/_site/css/bootstrap.css'>
+  <link rel="stylesheet" href='/codingBlog/_site/css/style.css'>
+
+
+  <body>
+   
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top py-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="" width="50" height="50" alt="">
+        <h3 class="d-inline align-middle">Encaptcha</h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href='/codingBlog/_site/index.html'>Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8 mx-auto">
+            <!-- Title -->
+      <h1 class="mt-4">CURL Reference</h1>
+      <!-- Author -->
+      <p class="lead">
+        by
+        <a href="#"></a>
+      </p>
+      <hr>
+      <!-- Date/Time -->
+      <p> Posted on Dec 11, 2018</p>
+             <h3>CURL</h3>
+<p>&nbsp;</p>
+<h5>Can be used for testing end points downloading files</h5>
+<p>&nbsp;</p>
+<p>for grabbing a url</p>
+<p>&nbsp;</p>
+<pre class="bg-dark text-warning rounded p-2"><code>curl &lt;url&gt;</code></pre>
+<p>&nbsp;</p>
+<p>to output to a file</p>
+<p>&nbsp;</p>
+<pre class="bg-dark text-warning rounded p-2"><code>curl -o &lt;fileName&gt; &lt;url&gt;
+</code></pre>
+<p>&nbsp;</p>
+<p>to include header information</p>
+<p>&nbsp;</p>
+<pre class="bg-dark text-warning rounded p-2"><code>curl -i &lt;url&gt;
+</code></pre>
+<p>&nbsp;</p>
+<p>to just get head</p>
+<p>&nbsp;</p>
+<p>-I or --head</p>
+<p>&nbsp;</p>
+<p>to download file with curl</p>
+<p>&nbsp;</p>
+<pre class="bg-dark text-warning rounded p-2"><code>curl -O &lt;url&gt;
+</code></pre>
+<p>&nbsp;</p>
+<p>Post request</p>
+<p><url> is the post request url</p>
+<p>&nbsp;</p>
+<pre class="bg-dark text-warning rounded p-2"><code>curl -d &quot;title=Hello&amp;body=Hello World&quot; &lt;url&gt;
+</code></pre>
+<p>&nbsp;</p>
+<p>PUT Request</p>
+<pre class="bg-dark text-warning rounded p-2"><code>curl -X PUT -d &quot;title=Hello&quot; &lt;url&gt;
+</code></pre>
+<p>&nbsp;</p>
+<p>Delete Request</p>
+<pre class="bg-dark text-warning rounded p-2"><code>curl -X DELETE &lt;url&gt;
+</code></pre>
+<p>&nbsp;</p>
+<p>For secure routes</p>
+<p>&nbsp;</p>
+<pre class="bg-dark text-warning rounded p-2"><code>curl -u &lt;username&gt;:&lt;password&gt; &lt;url&gt;
+</code></pre>
+<p>&nbsp;</p>
+<p>Follow redirection</p>
+<pre class="bg-dark text-warning rounded p-2"><code>curl -L &lt;url&gt;
+</code></pre>
+<p>&nbsp;</p>
+<p>FTP Protocol</p>
+<p>&nbsp;</p>
+<p>Uploading a file using CURL</p>
+<p>&nbsp;</p>
+<p>curl -u <a href='mailto:test@traversymedia.com' target='_blank' class='url'>test@traversymedia.com</a>:12345 -T <fileName> ftp://ftp.traversymedia.com</p>
+<p>&nbsp;</p>
+<p>curl -u <username>:<password> -T <fileName> <ftp url></p>
+<p>Download files by ftp</p>
+<p>&nbsp;</p>
+<p>curl -u <username>:<password> -O  <ftp url>/<filepath></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
+        </div>
+    </div>
+</div>
+
+      <!-- FOOTER -->
+  <footer id="main-footer" class="py-5 bg-light text-dark">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-6 mx-auto">
+          <p class="lead">
+            Copyright &copy;
+            <span id="year"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <script src='/codingBlog/_site/js/jquery.min.js'></script>
+    <script src='/codingBlog/_site/js/popper.min.js'></script>
+    <script src='/codingBlog/_site/js/bootstrap.min.js'></script>
+ </body>
+
+</html>

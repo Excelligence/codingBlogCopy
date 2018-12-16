@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Semicolons in Javascript</title>
+  <!-- <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css"> -->
+
+  <link rel="stylesheet" href='/codingBlog/_site/css/font-awesome.min.css'>
+  <link rel="stylesheet" href='/codingBlog/_site/css/bootstrap.css'>
+  <link rel="stylesheet" href='/codingBlog/_site/css/style.css'>
+
+
+  <body>
+   
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top py-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="" width="50" height="50" alt="">
+        <h3 class="d-inline align-middle">Encaptcha</h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href='/codingBlog/_site/index.html'>Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-8 mx-auto">
+            <!-- Title -->
+      <h1 class="mt-4">Semicolons in Javascript</h1>
+      <!-- Author -->
+      <p class="lead">
+        by
+        <a href="#">Excelligence</a>
+      </p>
+      <hr>
+      <!-- Date/Time -->
+      <p> Posted on Dec 13, 2018</p>
+             <p>The semicolon in JavaScript is used to separate statements, but it can be omitted if the statement is followed by a line break (or there’s only <em>one</em> statement in a <code>{</code>block<code>}</code>)</p>
+<p>They are optional</p>
+<p>Javascript will automatically insert semi colons for you using ASI(automatic semi colon insertion)</p>
+<p>Reasons for using semi colons</p>
+<ul>
+<li>They are required when two statements are on same line to separate them.</li>
+<li>If your team is using it, then you can use it for uniformity.</li>
+
+</ul>
+<p>&nbsp;</p>
+<p>Invalid reason for using semi colon</p>
+<ul>
+<li>Thinking that it will protect you from ASI errors</li>
+
+</ul>
+<pre class="bg-dark text-warning rounded p-2"><code>
+Example of one of the errors caused by automatic semi colon insertion
+function returnA () {
+return 4
+}
+//4
+function returnB () {
+    return
+     4
+    }
+//undefined
+
+//Second function is interpreted like this
+function returnC () {
+    return;
+     4;
+    }
+console.log(returnA(),
+returnB(),
+returnC(),)
+</code></pre>
+<p>Adding semi colons will not help you in the above error. The ASI will insert a semi colon after the return statement.</p>
+<h3>Errors causes by not using semi colons</h3>
+<p>When Looping through an array</p>
+<pre class="bg-dark text-warning rounded p-2"><code>//This will give an error
+[1,2,3].forEach
+</code></pre>
+<p>It can be solved by inserting a semi colon at the beginning </p>
+<pre class="bg-dark text-warning rounded p-2"><code>//Assign array to a variable and use forEach
+const arr=[1,2,3]
+arr.forEach
+
+</code></pre>
+<p>When using an IIFE</p>
+<pre class="bg-dark text-warning rounded p-2"><code>(function(){
+   //function body 
+}());
+//This will produce error.
+
+// Can be resolved using a semi colon
+
+;(function(){
+   //function body 
+}());
+
+</code></pre>
+<h3>Situations to avoid semi colons</h3>
+<p>After a closing curly bracket except for an assignment statement.</p>
+<pre class="bg-dark text-warning rounded p-2"><code>// NO semicolons after }:
+if  (...) {...} else {...}
+for (...) {...}
+while (...) {...}
+
+// BUT:
+do {...} while (...);
+
+// function statement: 
+function (arg) { /*do this*/ } // NO semicolon after }
+</code></pre>
+<p>After the round bracket of an if, for, while or switch statement</p>
+<pre class="bg-dark text-warning rounded p-2"><code>if (0 === 1); { alert(&quot;hi&quot;) }
+
+// equivalent to:
+
+if (0 === 1) /*do nothing*/ ;
+alert (&quot;hi&quot;);
+</code></pre>
+<h4>The less confusing path</h4>
+<ul>
+<li>Assign your arrays to variable and loop through them.</li>
+<li>Use a semi colon before IIFE.</li>
+<li>Don&#39;t use semi colons other than that.</li>
+
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+        </div>
+    </div>
+</div>
+
+      <!-- FOOTER -->
+  <footer id="main-footer" class="py-5 bg-light text-dark">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-6 mx-auto">
+          <p class="lead">
+            Copyright &copy;
+            <span id="year"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <script src='/codingBlog/_site/js/jquery.min.js'></script>
+    <script src='/codingBlog/_site/js/popper.min.js'></script>
+    <script src='/codingBlog/_site/js/bootstrap.min.js'></script>
+ </body>
+
+</html>
